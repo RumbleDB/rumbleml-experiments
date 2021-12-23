@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/criteo_1000/train.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/criteo_1000/test.parquet")
+let $vector-assembler_2 := get-transformer("VectorAssembler", {"inputCols" : ["features"], "outputCol" : "transformedFeatures"})
+let $naivebayes := get-estimator("NaiveBayes", {"featuresCol": "transformedFeatures"})
+let $pipeline := get-estimator("Pipeline", {"stages": [$vector-assembler_2, $naivebayes]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 1000
+return count($prediction[$$.label eq $$.prediction]) div $total

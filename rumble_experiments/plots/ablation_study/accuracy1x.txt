@@ -1,0 +1,84 @@
+Experiment 0 logistic Criteo 1000
+0.91
+0.91
+0.91
+Experiment 0 LinearSVC Criteo 1000
+0.923
+0.923
+0.923
+Experiment 0 NB Criteo 1000
+1
+1
+1
+Experiment 1 logistic Criteo 1000
+0.91
+0.91
+0.91
+Experiment 1 LinearSVC Criteo 1000
+0.924
+0.924
+0.924
+Experiment 1 NB Criteo 1000
+1
+1
+1
+Experiment 0 logistic YFCC 1000
+0.91
+0.91
+Experiment 0 RandomForest YFCC 1000
+0.899
+0.899
+Experiment 0 LinearSVC YFCC 1000
+0.897
+0.897
+Experiment 1 logistic YFCC 1000
+0.91
+0.91
+Experiment 1 RandomForest YFCC 1000
+0.899
+0.899
+Experiment 1 LinearSVC YFCC 1000
+0.897
+0.897
+Experiment 0 logistic Criteo 10000
+0.8247
+0.8247
+0.8247
+Experiment 0 LinearSVC Criteo 10000
+0.965
+0.965
+0.965
+Experiment 0 NB Criteo 10000
+1
+1
+1
+Experiment 1 logistic Criteo 10000
+0.8247
+0.8247
+0.8247
+Experiment 1 LinearSVC Criteo 10000
+0.9649
+0.9649
+0.9649
+Experiment 1 NB Criteo 10000
+1
+1
+1
+Experiment 0 logistic YFCC 10000
+0.9448
+0.9448
+Experiment 0 RandomForest YFCC 10000
+0.9142
+0.9142
+Experiment 0 LinearSVC YFCC 10000
+0.9015
+0.9015
+Experiment 1 logistic YFCC 10000
+0.9448
+0.9448
+Experiment 1 RandomForest YFCC 10000
+0.9142
+0.9142
+Experiment 1 LinearSVC YFCC 10000
+0.9015
+0.9015

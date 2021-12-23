@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/output/output.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/criteo.kaggle2014.test.parquet")
+let $pca := get-estimator("PCA", {"inputCol": "features", "outputCol": "transformedFeatures", "k": 2})
+let $logisticregression := get-estimator("LogisticRegression", {"featuresCol": "transformedFeatures", "maxIter": 5})
+let $pipeline := get-estimator("Pipeline", {"stages": [$pca, $logisticregression]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 6042135
+return count($prediction[$$.label eq $$.prediction]) div $total

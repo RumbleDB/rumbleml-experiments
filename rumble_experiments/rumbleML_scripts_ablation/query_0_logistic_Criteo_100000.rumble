@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/criteo_100000/train.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/criteo_100000/test.parquet")
+let $vector-assembler_2 := get-transformer("VectorAssembler", {"inputCols" : ["features"], "outputCol" : "transformedFeatures"})
+let $logisticregression := get-estimator("LogisticRegression", {"featuresCol": "transformedFeatures", "maxIter": 5})
+let $pipeline := get-estimator("Pipeline", {"stages": [$vector-assembler_2, $logisticregression]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 100000
+return count($prediction[$$.label eq $$.prediction]) div $total

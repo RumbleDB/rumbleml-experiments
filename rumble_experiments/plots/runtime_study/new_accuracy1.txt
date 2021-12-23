@@ -1,0 +1,30 @@
+Experiment 0 logistic Criteo
+0.8529807758
+Criteo logistic 0 0.8529807758350318
+Experiment 0 LinearSVC Criteo
+0.999229246
+Criteo LinearSVC 0 0.9992292459536241
+Experiment 1 logistic Criteo
+0.8529807758
+Criteo logistic 1 0.8529807758350318
+Experiment 1 LinearSVC Criteo
+0.9992304045
+Criteo LinearSVC 1 0.9992290804492121
+Experiment 0 logistic YFCC
+0.9492728003
+YFCC logistic 0 0.94927280030654
+Experiment 0 RandomForest YFCC
+0.9147426155
+YFCC RandomForest 0 0.9167140236531951
+Experiment 0 LinearSVC YFCC
+0.9002800695
+YFCC LinearSVC 0 0.9002800695268436
+Experiment 1 logistic YFCC
+0.9492728003
+YFCC logistic 1 0.94927280030654
+Experiment 1 RandomForest YFCC
+0.9147481688
+YFCC RandomForest 1 0.9167177258280377
+Experiment 1 LinearSVC YFCC
+0.9002800695
+YFCC LinearSVC 1 0.9002800695268436

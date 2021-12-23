@@ -1,0 +1,1228 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:41:39 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:41:39 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_Criteo_100000.rumble' for reading
+21/12/16 12:42:22 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:42:22 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:42:25 INFO LBFGS: Step Size: 1.375
+21/12/16 12:42:25 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 12:42:33 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738863 fval: 0.3796040724711009 rhs: 0.44213659624699925 cdd: 5.079945805189826E-4
+21/12/16 12:42:33 INFO LBFGS: Step Size: 0.4447
+21/12/16 12:42:34 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 12:42:37 INFO LBFGS: Step Size: 1.000
+21/12/16 12:42:37 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 12:42:41 INFO LBFGS: Step Size: 1.000
+21/12/16 12:42:41 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 12:42:45 INFO LBFGS: Step Size: 1.000
+21/12/16 12:42:45 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 12:42:45 INFO LBFGS: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 4, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 4, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	2m38.061s
+user	2m10.901s
+sys	0m4.673s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:44:17 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:44:17 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_Criteo_100000.rumble' for reading
+21/12/16 12:44:57 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:44:57 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:45:01 INFO LBFGS: Step Size: 1.375
+21/12/16 12:45:01 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 12:45:08 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738863 fval: 0.3796040724711009 rhs: 0.44213659624699925 cdd: 5.079945805189826E-4
+21/12/16 12:45:08 INFO LBFGS: Step Size: 0.4447
+21/12/16 12:45:08 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 12:45:12 INFO LBFGS: Step Size: 1.000
+21/12/16 12:45:12 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 12:45:15 INFO LBFGS: Step Size: 1.000
+21/12/16 12:45:15 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 12:45:19 INFO LBFGS: Step Size: 1.000
+21/12/16 12:45:19 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 12:45:19 INFO LBFGS: Converged because max iterations reached
+
+real	1m26.332s
+user	1m39.209s
+sys	0m4.522s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:45:43 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:45:43 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_Criteo_100000.rumble' for reading
+21/12/16 12:46:25 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:46:25 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:46:29 INFO LBFGS: Step Size: 1.375
+21/12/16 12:46:29 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 12:46:38 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738863 fval: 0.3796040724711009 rhs: 0.44213659624699925 cdd: 5.079945805189826E-4
+21/12/16 12:46:38 INFO LBFGS: Step Size: 0.4447
+21/12/16 12:46:38 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 12:46:42 INFO LBFGS: Step Size: 1.000
+21/12/16 12:46:42 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 12:46:46 INFO LBFGS: Step Size: 1.000
+21/12/16 12:46:46 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 12:46:50 INFO LBFGS: Step Size: 1.000
+21/12/16 12:46:50 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 12:46:50 INFO LBFGS: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m23.630s
+user	1m43.034s
+sys	0m4.414s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:47:07 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:47:07 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 12:47:48 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:47:48 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:48:05 INFO OWLQN: Step Size: 0.05499
+21/12/16 12:48:05 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 12:48:17 INFO OWLQN: Step Size: 1.050
+21/12/16 12:48:17 INFO OWLQN: Val and Grad Norm: 0.494952 (rel: 0.209) 1.32443
+21/12/16 12:48:28 INFO OWLQN: Step Size: 0.2500
+21/12/16 12:48:29 INFO OWLQN: Val and Grad Norm: 0.479940 (rel: 0.0303) 1.55842
+21/12/16 12:48:36 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:48:36 INFO OWLQN: Val and Grad Norm: 0.468828 (rel: 0.0232) 1.07294
+21/12/16 12:48:44 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:48:44 INFO OWLQN: Val and Grad Norm: 0.444441 (rel: 0.0520) 0.742849
+21/12/16 12:48:44 INFO OWLQN: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeAscii_slow(Output.java:499)
+	at com.esotericsoftware.kryo.io.Output.writeString(Output.java:348)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:195)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:188)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:162)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	2m41.687s
+user	2m50.553s
+sys	0m4.933s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:49:49 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:49:49 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 12:50:28 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:50:28 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:50:44 INFO OWLQN: Step Size: 0.05499
+21/12/16 12:50:44 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 12:50:55 INFO OWLQN: Step Size: 1.050
+21/12/16 12:50:56 INFO OWLQN: Val and Grad Norm: 0.494952 (rel: 0.209) 1.32443
+21/12/16 12:51:07 INFO OWLQN: Step Size: 0.2500
+21/12/16 12:51:07 INFO OWLQN: Val and Grad Norm: 0.479940 (rel: 0.0303) 1.55842
+21/12/16 12:51:14 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:51:15 INFO OWLQN: Val and Grad Norm: 0.468828 (rel: 0.0232) 1.07294
+21/12/16 12:51:22 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:51:22 INFO OWLQN: Val and Grad Norm: 0.444441 (rel: 0.0520) 0.742849
+21/12/16 12:51:22 INFO OWLQN: Converged because max iterations reached
+
+real	1m51.198s
+user	2m30.770s
+sys	0m4.930s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:51:40 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:51:40 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 12:52:21 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:52:21 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:52:38 INFO OWLQN: Step Size: 0.05499
+21/12/16 12:52:38 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 12:52:50 INFO OWLQN: Step Size: 1.050
+21/12/16 12:52:50 INFO OWLQN: Val and Grad Norm: 0.494952 (rel: 0.209) 1.32443
+21/12/16 12:53:01 INFO OWLQN: Step Size: 0.2500
+21/12/16 12:53:01 INFO OWLQN: Val and Grad Norm: 0.479940 (rel: 0.0303) 1.55842
+21/12/16 12:53:11 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:53:11 INFO OWLQN: Val and Grad Norm: 0.468828 (rel: 0.0232) 1.07294
+21/12/16 12:53:19 INFO OWLQN: Step Size: 0.5000
+21/12/16 12:53:19 INFO OWLQN: Val and Grad Norm: 0.444441 (rel: 0.0520) 0.742849
+21/12/16 12:53:19 INFO OWLQN: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m49.559s
+user	2m33.132s
+sys	0m4.905s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:53:29 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:53:29 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_NB_Criteo_100000.rumble' for reading
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 4, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 4, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	1m54.070s
+user	1m40.045s
+sys	0m4.219s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:55:23 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:55:23 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_NB_Criteo_100000.rumble' for reading
+
+real	1m3.730s
+user	1m3.632s
+sys	0m3.498s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:56:27 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:56:27 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_NB_Criteo_100000.rumble' for reading
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	0m53.344s
+user	1m10.581s
+sys	0m3.703s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:57:20 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:57:20 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_Criteo_100000.rumble' for reading
+21/12/16 12:57:54 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:57:54 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:57:55 INFO LBFGS: Step Size: 1.375
+21/12/16 12:57:55 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 12:57:56 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738852 fval: 0.37960407247110134 rhs: 0.4421365962469999 cdd: 5.079945805190793E-4
+21/12/16 12:57:56 INFO LBFGS: Step Size: 0.4447
+21/12/16 12:57:56 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 12:57:56 INFO LBFGS: Step Size: 1.000
+21/12/16 12:57:56 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 12:57:57 INFO LBFGS: Step Size: 1.000
+21/12/16 12:57:57 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 12:57:57 INFO LBFGS: Step Size: 1.000
+21/12/16 12:57:57 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 12:57:57 INFO LBFGS: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 4, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 4, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	1m42.574s
+user	0m41.704s
+sys	0m3.429s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:59:03 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:59:03 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_Criteo_100000.rumble' for reading
+21/12/16 12:59:35 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 12:59:35 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 12:59:36 INFO LBFGS: Step Size: 1.375
+21/12/16 12:59:36 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 12:59:37 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738852 fval: 0.37960407247110134 rhs: 0.4421365962469999 cdd: 5.079945805190793E-4
+21/12/16 12:59:37 INFO LBFGS: Step Size: 0.4447
+21/12/16 12:59:37 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 12:59:37 INFO LBFGS: Step Size: 1.000
+21/12/16 12:59:37 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 12:59:38 INFO LBFGS: Step Size: 1.000
+21/12/16 12:59:38 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 12:59:38 INFO LBFGS: Step Size: 1.000
+21/12/16 12:59:38 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 12:59:38 INFO LBFGS: Converged because max iterations reached
+
+real	0m50.714s
+user	0m40.694s
+sys	0m3.759s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 12:59:54 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 12:59:54 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_Criteo_100000.rumble' for reading
+21/12/16 13:00:27 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:00:27 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:00:27 INFO LBFGS: Step Size: 1.375
+21/12/16 13:00:27 INFO LBFGS: Val and Grad Norm: 0.442150 (rel: 0.230) 0.841481
+21/12/16 13:00:28 INFO StrongWolfeLineSearch: Line search t: 0.4447065759738852 fval: 0.37960407247110134 rhs: 0.4421365962469999 cdd: 5.079945805190793E-4
+21/12/16 13:00:28 INFO LBFGS: Step Size: 0.4447
+21/12/16 13:00:28 INFO LBFGS: Val and Grad Norm: 0.379604 (rel: 0.141) 0.412962
+21/12/16 13:00:29 INFO LBFGS: Step Size: 1.000
+21/12/16 13:00:29 INFO LBFGS: Val and Grad Norm: 0.348284 (rel: 0.0825) 0.346886
+21/12/16 13:00:29 INFO LBFGS: Step Size: 1.000
+21/12/16 13:00:29 INFO LBFGS: Val and Grad Norm: 0.311394 (rel: 0.106) 0.304136
+21/12/16 13:00:29 INFO LBFGS: Step Size: 1.000
+21/12/16 13:00:29 INFO LBFGS: Val and Grad Norm: 0.281820 (rel: 0.0950) 0.115708
+21/12/16 13:00:29 INFO LBFGS: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	0m50.541s
+user	0m42.120s
+sys	0m3.690s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:00:44 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:00:44 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 13:01:18 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:01:18 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:01:20 INFO OWLQN: Step Size: 0.05499
+21/12/16 13:01:20 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 13:01:21 INFO OWLQN: Step Size: 1.050
+21/12/16 13:01:21 INFO OWLQN: Val and Grad Norm: 0.494953 (rel: 0.209) 1.32468
+21/12/16 13:01:22 INFO OWLQN: Step Size: 0.2500
+21/12/16 13:01:23 INFO OWLQN: Val and Grad Norm: 0.479959 (rel: 0.0303) 1.55986
+21/12/16 13:01:23 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:01:23 INFO OWLQN: Val and Grad Norm: 0.468837 (rel: 0.0232) 1.07333
+21/12/16 13:01:24 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:01:24 INFO OWLQN: Val and Grad Norm: 0.444509 (rel: 0.0519) 0.742654
+21/12/16 13:01:24 INFO OWLQN: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeAscii_slow(Output.java:499)
+	at com.esotericsoftware.kryo.io.Output.writeString(Output.java:348)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:195)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:188)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:162)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	1m21.009s
+user	0m48.130s
+sys	0m3.610s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:02:05 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:02:05 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 13:02:40 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:02:40 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:02:42 INFO OWLQN: Step Size: 0.05499
+21/12/16 13:02:42 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 13:02:43 INFO OWLQN: Step Size: 1.050
+21/12/16 13:02:43 INFO OWLQN: Val and Grad Norm: 0.494953 (rel: 0.209) 1.32468
+21/12/16 13:02:45 INFO OWLQN: Step Size: 0.2500
+21/12/16 13:02:45 INFO OWLQN: Val and Grad Norm: 0.479959 (rel: 0.0303) 1.55986
+21/12/16 13:02:46 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:02:46 INFO OWLQN: Val and Grad Norm: 0.468837 (rel: 0.0232) 1.07333
+21/12/16 13:02:47 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:02:47 INFO OWLQN: Val and Grad Norm: 0.444509 (rel: 0.0519) 0.742654
+21/12/16 13:02:47 INFO OWLQN: Converged because max iterations reached
+
+real	0m49.978s
+user	0m45.566s
+sys	0m3.542s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:02:55 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:02:55 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_Criteo_100000.rumble' for reading
+21/12/16 13:03:31 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:03:31 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:03:33 INFO OWLQN: Step Size: 0.05499
+21/12/16 13:03:33 INFO OWLQN: Val and Grad Norm: 0.625997 (rel: 0.374) 2.17566
+21/12/16 13:03:34 INFO OWLQN: Step Size: 1.050
+21/12/16 13:03:34 INFO OWLQN: Val and Grad Norm: 0.494953 (rel: 0.209) 1.32468
+21/12/16 13:03:35 INFO OWLQN: Step Size: 0.2500
+21/12/16 13:03:35 INFO OWLQN: Val and Grad Norm: 0.479959 (rel: 0.0303) 1.55986
+21/12/16 13:03:36 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:03:36 INFO OWLQN: Val and Grad Norm: 0.468837 (rel: 0.0232) 1.07333
+21/12/16 13:03:37 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:03:37 INFO OWLQN: Val and Grad Norm: 0.444509 (rel: 0.0519) 0.742654
+21/12/16 13:03:37 INFO OWLQN: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	0m49.559s
+user	0m47.119s
+sys	0m3.825s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:03:45 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:03:45 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_NB_Criteo_100000.rumble' for reading
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 4, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 4, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	1m19.953s
+user	0m39.117s
+sys	0m3.335s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:05:05 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:05:05 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_NB_Criteo_100000.rumble' for reading
+
+real	0m41.448s
+user	0m37.978s
+sys	0m3.062s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:05:46 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:05:46 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_NB_Criteo_100000.rumble' for reading
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	0m41.010s
+user	0m38.969s
+sys	0m3.094s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:06:27 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:06:27 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:07:37 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:07:37 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:07:39 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295121 fval: 0.49650350679759103 rhs: 0.6780088418754153 cdd: 8.678774063501013
+21/12/16 13:07:39 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:07:39 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:07:41 INFO StrongWolfeLineSearch: Line search t: 0.4458527012690544 fval: 0.2930042464276296 rhs: 0.4964606604078835 cdd: -6.234458077428444E-4
+21/12/16 13:07:41 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:07:41 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:07:42 INFO LBFGS: Step Size: 1.500
+21/12/16 13:07:42 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:07:47 INFO StrongWolfeLineSearch: Line search t: 0.532842711269446 fval: 0.16364535385104792 rhs: 0.25242507458519037 cdd: -0.006986208814881949
+21/12/16 13:07:47 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:07:47 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:07:48 INFO LBFGS: Step Size: 1.000
+21/12/16 13:07:48 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:07:48 INFO LBFGS: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeAscii_slow(Output.java:499)
+	at com.esotericsoftware.kryo.io.Output.writeString(Output.java:348)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:195)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:188)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:162)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	3m5.569s
+user	0m48.622s
+sys	0m3.593s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:09:33 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:09:33 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:10:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:10:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:10:44 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295121 fval: 0.496503506797591 rhs: 0.6780088418754153 cdd: 8.678774063501013
+21/12/16 13:10:44 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:10:44 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:10:47 INFO StrongWolfeLineSearch: Line search t: 0.4458527012690544 fval: 0.2930042464276297 rhs: 0.49646066040788345 cdd: -6.234458077428258E-4
+21/12/16 13:10:47 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:10:47 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:10:50 INFO LBFGS: Step Size: 1.500
+21/12/16 13:10:50 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:10:53 INFO StrongWolfeLineSearch: Line search t: 0.5328427112694458 fval: 0.16364535385104792 rhs: 0.2524250745851903 cdd: -0.006986208814882147
+21/12/16 13:10:53 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:10:53 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:10:54 INFO LBFGS: Step Size: 1.000
+21/12/16 13:10:54 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:10:54 INFO LBFGS: Converged because max iterations reached
+
+real	1m52.902s
+user	0m48.209s
+sys	0m3.475s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:11:26 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:11:26 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:12:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:12:36 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:12:37 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295121 fval: 0.496503506797591 rhs: 0.6780088418754152 cdd: 8.678774063501013
+21/12/16 13:12:37 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:12:37 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:12:39 INFO StrongWolfeLineSearch: Line search t: 0.4458527012690544 fval: 0.2930042464276296 rhs: 0.49646066040788345 cdd: -6.234458077428301E-4
+21/12/16 13:12:39 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:12:39 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:12:42 INFO LBFGS: Step Size: 1.500
+21/12/16 13:12:42 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:12:44 INFO StrongWolfeLineSearch: Line search t: 0.5328427112694458 fval: 0.16364535385104792 rhs: 0.2524250745851903 cdd: -0.006986208814882141
+21/12/16 13:12:44 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:12:44 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:12:44 INFO LBFGS: Step Size: 1.000
+21/12/16 13:12:44 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:12:44 INFO LBFGS: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m42.102s
+user	0m42.447s
+sys	0m3.384s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:13:08 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:13:08 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_RandomForest_YFCC_100000.rumble' for reading
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeAscii_slow(Output.java:499)
+	at com.esotericsoftware.kryo.io.Output.writeString(Output.java:348)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:195)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$StringSerializer.write(DefaultSerializers.java:188)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:162)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	3m31.320s
+user	0m51.559s
+sys	0m3.657s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:16:39 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:16:39 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_RandomForest_YFCC_100000.rumble' for reading
+
+real	2m15.812s
+user	0m47.653s
+sys	0m3.398s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:18:55 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:18:55 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_RandomForest_YFCC_100000.rumble' for reading
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	2m6.495s
+user	0m50.297s
+sys	0m3.461s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:21:01 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:21:01 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:22:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:22:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:22:10 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:22:10 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:22:11 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:22:11 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:22:13 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:22:13 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:22:14 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:22:14 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:22:17 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:22:17 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:22:17 INFO OWLQN: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 1, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 1, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	2m51.448s
+user	0m48.092s
+sys	0m3.590s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:23:53 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:23:53 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:25:01 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:25:02 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:25:04 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:25:04 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:25:06 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:25:06 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:25:09 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:25:09 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:25:12 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:25:12 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:25:15 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:25:15 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:25:15 INFO OWLQN: Converged because max iterations reached
+
+real	1m53.986s
+user	0m46.749s
+sys	0m3.590s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:25:47 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:25:47 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_0_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:26:55 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:26:55 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:26:58 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:26:58 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:27:01 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:27:01 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:27:05 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:27:05 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:27:05 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:27:05 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:27:08 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:27:08 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:27:08 INFO OWLQN: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m44.200s
+user	0m41.611s
+sys	0m3.459s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:27:31 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:27:31 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:28:44 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:28:44 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:28:46 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295122 fval: 0.4965035067975913 rhs: 0.6780088418754152 cdd: 8.678774063501015
+21/12/16 13:28:46 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:28:46 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:28:47 INFO StrongWolfeLineSearch: Line search t: 0.44585270126905463 fval: 0.2930042464276297 rhs: 0.4964606604078838 cdd: -6.234458077425487E-4
+21/12/16 13:28:47 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:28:47 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:28:48 INFO LBFGS: Step Size: 1.500
+21/12/16 13:28:48 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:28:49 INFO StrongWolfeLineSearch: Line search t: 0.5328427112694454 fval: 0.16364535385104786 rhs: 0.2524250745851903 cdd: -0.006986208814882036
+21/12/16 13:28:49 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:28:49 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:28:51 INFO LBFGS: Step Size: 1.000
+21/12/16 13:28:51 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:28:51 INFO LBFGS: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeVarInt(Output.java:284)
+	at com.esotericsoftware.kryo.util.DefaultClassResolver.writeClass(DefaultClassResolver.java:102)
+	at com.esotericsoftware.kryo.Kryo.writeClass(Kryo.java:540)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:645)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	3m55.630s
+user	0m48.729s
+sys	0m3.540s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:31:27 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:31:27 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:32:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:32:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:32:42 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295122 fval: 0.49650350679759125 rhs: 0.6780088418754152 cdd: 8.678774063501015
+21/12/16 13:32:42 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:32:42 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:32:44 INFO StrongWolfeLineSearch: Line search t: 0.4458527012690545 fval: 0.2930042464276297 rhs: 0.4964606604078837 cdd: -6.234458077427587E-4
+21/12/16 13:32:44 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:32:44 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:32:45 INFO LBFGS: Step Size: 1.500
+21/12/16 13:32:45 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:32:46 INFO StrongWolfeLineSearch: Line search t: 0.5328427112694458 fval: 0.1636453538510479 rhs: 0.25242507458519037 cdd: -0.006986208814882078
+21/12/16 13:32:46 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:32:46 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:32:47 INFO LBFGS: Step Size: 1.000
+21/12/16 13:32:47 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:32:47 INFO LBFGS: Converged because max iterations reached
+
+real	1m58.593s
+user	0m41.220s
+sys	0m3.306s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:33:25 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:33:25 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_logistic_YFCC_100000.rumble' for reading
+21/12/16 13:34:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:34:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:34:43 INFO StrongWolfeLineSearch: Line search t: 0.04273051401295121 fval: 0.49650350679759125 rhs: 0.6780088418754153 cdd: 8.678774063501013
+21/12/16 13:34:43 INFO LBFGS: Step Size: 0.04273
+21/12/16 13:34:43 INFO LBFGS: Val and Grad Norm: 0.496504 (rel: 0.268) 8.68926
+21/12/16 13:34:44 INFO StrongWolfeLineSearch: Line search t: 0.4458527012690545 fval: 0.2930042464276297 rhs: 0.4964606604078837 cdd: -6.234458077424624E-4
+21/12/16 13:34:44 INFO LBFGS: Step Size: 0.4459
+21/12/16 13:34:44 INFO LBFGS: Val and Grad Norm: 0.293004 (rel: 0.410) 1.99461
+21/12/16 13:34:46 INFO LBFGS: Step Size: 1.500
+21/12/16 13:34:46 INFO LBFGS: Val and Grad Norm: 0.252440 (rel: 0.138) 1.80990
+21/12/16 13:34:50 INFO StrongWolfeLineSearch: Line search t: 0.5328427112694454 fval: 0.16364535385104786 rhs: 0.2524250745851903 cdd: -0.006986208814882096
+21/12/16 13:34:50 INFO LBFGS: Step Size: 0.5328
+21/12/16 13:34:50 INFO LBFGS: Val and Grad Norm: 0.163645 (rel: 0.352) 1.14201
+21/12/16 13:34:51 INFO LBFGS: Step Size: 1.000
+21/12/16 13:34:51 INFO LBFGS: Val and Grad Norm: 0.144661 (rel: 0.116) 0.723945
+21/12/16 13:34:51 INFO LBFGS: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m45.399s
+user	0m42.776s
+sys	0m3.304s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:35:11 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:35:11 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_RandomForest_YFCC_100000.rumble' for reading
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 0, required: 1
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 0, required: 1
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeVarInt(Output.java:284)
+	at com.esotericsoftware.kryo.util.DefaultClassResolver.writeClass(DefaultClassResolver.java:102)
+	at com.esotericsoftware.kryo.Kryo.writeClass(Kryo.java:540)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:645)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	4m16.580s
+user	0m48.893s
+sys	0m3.761s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:39:27 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:39:27 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_RandomForest_YFCC_100000.rumble' for reading
+
+real	2m34.252s
+user	0m46.647s
+sys	0m3.624s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:42:02 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:42:02 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_RandomForest_YFCC_100000.rumble' for reading
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	2m9.493s
+user	0m51.872s
+sys	0m3.560s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:44:11 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:44:11 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:45:27 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:45:28 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:45:30 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:45:30 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:45:33 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:45:33 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:45:34 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:45:34 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:45:34 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:45:34 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:45:35 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:45:35 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:45:35 INFO OWLQN: Converged because max iterations reached
+We are very embarrassed, because an error has occured that we did not anticipate ?: Buffer overflow. Available: 1, required: 8
+We would like to investigate this and make sure to fix it. We would be very grateful if you could contact us or file an issue on GitHub with your query.
+Link: https://github.com/RumbleDB/rumble/issues
+For more debug info (e.g., so you can communicate it to us), please try again using --show-error-info yes in your command line.
+com.esotericsoftware.kryo.KryoException: Buffer overflow. Available: 1, required: 8
+	at com.esotericsoftware.kryo.io.Output.require(Output.java:167)
+	at com.esotericsoftware.kryo.io.Output.writeLong(Output.java:530)
+	at com.esotericsoftware.kryo.io.Output.writeDouble(Output.java:659)
+	at org.rumbledb.items.DoubleItem.write(DoubleItem.java:156)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.rumbledb.items.AnnotatedItem.write(AnnotatedItem.java:64)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:100)
+	at com.esotericsoftware.kryo.serializers.CollectionSerializer.write(CollectionSerializer.java:40)
+	at com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:557)
+	at org.rumbledb.items.ObjectItem.write(ObjectItem.java:163)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:514)
+	at com.esotericsoftware.kryo.serializers.DefaultSerializers$KryoSerializableSerializer.write(DefaultSerializers.java:512)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:361)
+	at com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer.write(DefaultArraySerializers.java:302)
+	at com.esotericsoftware.kryo.Kryo.writeClassAndObject(Kryo.java:651)
+	at org.apache.spark.serializer.KryoSerializerInstance.serialize(KryoSerializer.scala:378)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:542)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+real	3m35.309s
+user	0m48.934s
+sys	0m3.645s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:47:46 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:47:46 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:49:02 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:49:02 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:49:03 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:49:03 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:49:05 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:49:05 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:49:05 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:49:05 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:49:07 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:49:07 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:49:08 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:49:08 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:49:08 INFO OWLQN: Converged because max iterations reached
+
+real	1m59.177s
+user	0m41.621s
+sys	0m3.037s
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/emr/emrfs/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/aws/redshift/jdbc/redshift-jdbc42-1.2.37.1061.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/12/16 13:49:45 INFO deprecation: io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+21/12/16 13:49:45 INFO S3NativeFileSystem: Opening 's3://rumbleml-data/rumble_experiments/query_1_LinearSVC_YFCC_100000.rumble' for reading
+21/12/16 13:51:00 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/12/16 13:51:00 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/12/16 13:51:03 INFO OWLQN: Step Size: 0.003048
+21/12/16 13:51:03 INFO OWLQN: Val and Grad Norm: 0.797649 (rel: 0.202) 24.1833
+21/12/16 13:51:04 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:51:04 INFO OWLQN: Val and Grad Norm: 0.623024 (rel: 0.219) 21.4678
+21/12/16 13:51:06 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:51:06 INFO OWLQN: Val and Grad Norm: 0.365308 (rel: 0.414) 13.9075
+21/12/16 13:51:08 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:51:08 INFO OWLQN: Val and Grad Norm: 0.314665 (rel: 0.139) 7.75221
+21/12/16 13:51:09 INFO OWLQN: Step Size: 0.5000
+21/12/16 13:51:09 INFO OWLQN: Val and Grad Norm: 0.289412 (rel: 0.0803) 4.26732
+21/12/16 13:51:09 INFO OWLQN: Converged because max iterations reached
+[INFO] Rumble was able to optimize a predicate to a native SQL query.
+
+real	1m43.545s
+user	0m42.863s
+sys	0m3.503s

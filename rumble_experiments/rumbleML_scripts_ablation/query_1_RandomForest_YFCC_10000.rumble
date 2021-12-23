@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/yfcc_10000/train.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/yfcc_10000/test.parquet")
+let $scaler := get-estimator("MaxAbsScaler", {"inputCol": "features", "outputCol": "transformedFeatures"})
+let $randomforest := get-estimator("RandomForestClassifier", {"featuresCol": "transformedFeatures", "numTrees": 5})
+let $pipeline := get-estimator("Pipeline", {"stages": [$scaler, $randomforest]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 10000
+return count($prediction[$$.label eq $$.prediction]) div $total

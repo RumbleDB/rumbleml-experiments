@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/yfcc_100000/train.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/yfcc_100000/test.parquet")
+let $pca := get-estimator("PCA", {"inputCol": "features", "outputCol": "transformedFeatures", "k": 2})
+let $naivebayes := get-estimator("NaiveBayes", {"featuresCol": "transformedFeatures"})
+let $pipeline := get-estimator("Pipeline", {"stages": [$pca, $naivebayes]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 100000
+return count($prediction[$$.label eq $$.prediction]) div $total

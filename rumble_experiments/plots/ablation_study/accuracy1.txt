@@ -1,0 +1,36 @@
+Experiment 0 logistic Criteo 100000
+0.83182
+0.83182
+Experiment 0 LinearSVC Criteo 100000
+0.98981
+0.98981
+Experiment 0 NB Criteo 100000
+1
+1
+Experiment 1 logistic Criteo 100000
+0.83182
+0.83182
+Experiment 1 LinearSVC Criteo 100000
+0.98982
+0.98982
+Experiment 1 NB Criteo 100000
+0.97039
+0.97039
+Experiment 0 logistic YFCC 100000
+0.94991
+0.94991
+Experiment 0 RandomForest YFCC 100000
+0.91408
+0.91408
+Experiment 0 LinearSVC YFCC 100000
+0.90002
+0.90002
+Experiment 1 logistic YFCC 100000
+0.94991
+0.94991
+Experiment 1 RandomForest YFCC 100000
+0.91407
+0.91407
+Experiment 1 LinearSVC YFCC 100000
+0.90002
+0.90002

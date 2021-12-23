@@ -1,0 +1,33 @@
+declare function local:convert($input) {
+  annotate(
+    for $l in unparsed-text-lines($input)
+    let $tokens := tokenize ($l, " ")
+    let $label :=
+      if (contains(head($tokens), "indoor"))
+      then 0
+      else 1
+    return {
+      "label" : $label,
+      "features" : {|
+        for $i at $p in tail($tokens)
+        return { string($p) : $i }
+      |}
+    },
+    {
+      "label" : "string",
+      "features" : {|
+        for $i in 1 to 4096
+        return { string($i) : "double" }
+      |}
+    }
+  )
+};
+let $training-data := local:convert("trainset.txt")
+let $test-data := local:convert("testset.txt")
+let $assembler := get-transformer("VectorAssembler",{"inputCols" : ["features"], "outputCol" : "transformedFeatures"})
+let $linear-svc := get-estimator("LinearSVC",{"featuresCol": "transformedFeatures","maxIter" : 5})
+let $pipeline := get-estimator("Pipeline",{"stages": [$assembler, $linear-svc]})
+let $model := $pipeline($training-data, {})
+let $prediction := $model($test-data, {})
+let $total := count($prediction)
+return count($prediction[$$.label eq $$.prediction]) div $total

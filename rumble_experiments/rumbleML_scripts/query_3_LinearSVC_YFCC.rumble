@@ -1,0 +1,9 @@
+let $training-data := parquet-file("s3://rumbleml-data/YFCC100M_train.parquet")
+let $test-data := parquet-file("s3://rumbleml-data/YFCC100M_test.parquet")
+let $pca := get-estimator("PCA", {"inputCol": "features", "outputCol": "transformedFeatures", "k": 2})
+let $linearsvc := get-estimator("LinearSVC", {"featuresCol": "transformedFeatures", "maxIter": 5})
+let $pipeline := get-estimator("Pipeline", {"stages": [$pca, $linearsvc]})
+let $pip := $pipeline($training-data, {})
+let $prediction := $pip($test-data, {})
+let $total := 540223
+return count($prediction[$$.label eq $$.prediction]) div $total
