@@ -8,7 +8,9 @@
 
 `rumbleML_scripts_generator` generates shell scripts and rumble scripts for experiments
 
-`run_all_experiments.sh` is the shell script for all experiments. 
+`run_all_experiments.sh` is the shell script for all runtime experiments. 
+
+`run_all_experiments_ablation.sh` is the shell script for all ablation experiments. 
 
 In order to run the experiments within EMR, it might be required to move run_spark.py to the root.
 We log experiments through `2>` and `1>` with

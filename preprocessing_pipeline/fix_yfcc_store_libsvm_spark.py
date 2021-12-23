@@ -40,4 +40,4 @@ prediction = model.transform(test)
 predictionAndLabels = prediction.select("label", "prediction") 
 correctY = predictionAndLabels.filter("label == prediction").count()
 total = predictionAndLabels.count()
-correctY / total
+print(correctY / total)
