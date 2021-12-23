@@ -1,10 +1,10 @@
 ## RumbleML experiments
 
-Note: [overview of experiments](https://www.notion.so/ds3lab/RumbleML-8de8a950ddd840ec920dba193b11dc4d)
-
 `/plots/runtime_plots.ipynb` generates all experimental plots for RumbleML runtime plots
 
 `/plots/ablation_plots.ipynb` generates all experimental plots for RumbleML ablation study plots
+
+`/preprocessing_pipeline` includes the end-to-end scripts for our pipelines in RumbleML and spark.ml to compare. `fix_yfcc.rumble` and `fix_yfcc_spark.py` are both preprocessing the raw YFCC data and training an ML model afterwards, while `fix_yfcc_store_libsvm_spark.py` additionally also stores the data as libsvm file.
 
 `rumbleML_scripts_generator` generates shell scripts and rumble scripts for experiments
 
