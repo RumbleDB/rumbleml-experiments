@@ -1,4 +1,4 @@
-from dspipes import MllibPipelines
+import MllibPipelines
 from pyspark import SparkContext
 from pyspark.sql import SparkSession
 from pyspark.conf import SparkConf
